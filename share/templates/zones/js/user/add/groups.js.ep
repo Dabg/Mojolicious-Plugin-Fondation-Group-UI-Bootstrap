@@ -1,0 +1,47 @@
+<script>
+/**
+ * Called by DatatableUser.js when editing a user.
+ * Fetches all groups and checks the ones the user belongs to.
+ * @param {object} user - The user object (with user.groups array)
+ */
+function loadGroups(user) {
+    $.getJSON('/api/group', function(allGroups) {
+        var container = $('#groups-checkboxes');
+        container.empty();
+
+        var userGroupIds = {};
+        if (user && user.groups) {
+            for (var i = 0; i < user.groups.length; i++) {
+                userGroupIds[user.groups[i].id] = true;
+            }
+        }
+
+        for (var i = 0; i < allGroups.length; i++) {
+            var g = allGroups[i];
+            var checked = userGroupIds[g.id] ? ' checked' : '';
+            container.append(
+                '<div class="form-check">' +
+                '<input class="form-check-input group-checkbox" type="checkbox" ' +
+                'value="' + g.id + '" id="group-' + g.id + '"' + checked + '>' +
+                '<label class="form-check-label" for="group-' + g.id + '">' +
+                g.name + '</label>' +
+                '</div>'
+            );
+        }
+
+        $('#groups-group').show();
+    });
+}
+
+/**
+ * Intercepts the save to collect group assignments.
+ * Called by a hook in DatatableUser.js after saveObject click.
+ */
+function collectGroupAssignments() {
+    var ids = [];
+    $('.group-checkbox:checked').each(function() {
+        ids.push($(this).val());
+    });
+    return ids;
+}
+</script>

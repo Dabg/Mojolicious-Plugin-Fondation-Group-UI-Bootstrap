@@ -1,0 +1,9 @@
+<div class="form-group row" id="groups-group" style="display: none;">
+  <label for="groups" class="col-sm-2 col-form-label text-right">
+    <%= l 'Groups' %>
+  </label>
+  <div class="col-sm-10">
+    <div id="groups-checkboxes"></div>
+  </div>
+  <div class="clearfix"></div>
+</div>
