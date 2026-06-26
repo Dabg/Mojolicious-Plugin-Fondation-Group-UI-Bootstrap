@@ -16,7 +16,9 @@ sub fondation_meta {
 
 sub register ($self, $app, $conf) {
 
-    $app->routes->get('/groups')->to(
+    $app->routes->get('/groups')
+      ->requires('fondation.perm' => 'group_list')
+      ->to(
         controller => 'Group',
         action     => 'list'
     );
