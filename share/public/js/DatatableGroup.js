@@ -3,7 +3,7 @@ var tableau;
 $(function() {
     if (!$('#panel-group').length) return;
     initialiseTabGroup();
-    $('#menuAjoutGroup').on('click', function(event) {
+    $('#menuAddGroup').on('click', function(event) {
         addGroup();
     });
 
@@ -172,8 +172,8 @@ function initialiseTabGroup() {
                 "render": function (data, type, row) {
                     if (type === 'display') {
                         return loadBoutonAction([
-                            { 'droit': 'administration', 'title': l('Edit group'), 'classe': "fa fa-edit intModifie" },
-                            { 'droit': 'administration', 'title': l('Delete group'), 'classe': "fa fa-trash intSupprime" },
+                            { 'perm': 'group_update', 'title': l('Edit group'), 'classe': "fa fa-edit intModifie" },
+                            { 'perm': 'group_delete', 'title': l('Delete group'), 'classe': "fa fa-trash intSupprime" },
                         ]);
                     }
                     return data;

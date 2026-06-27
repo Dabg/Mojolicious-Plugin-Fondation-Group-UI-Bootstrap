@@ -10,7 +10,9 @@
 
   <div id="panel-group" class="card" style="display: none;">
     <div class="card-header d-flex justify-content-between"><%= l 'Groups list' %>
-      <span id="menuAjoutGroup" class="fa fa-2x fa-plus" title="<%= l 'Add a group' %>" data-bs-toggle="modal" data-bs-target="#group-modal"></span>
+      % if ($c->check_perm('group_create')) {
+      <span id="menuAddGroup" class="fa fa-2x fa-plus" title="<%= l 'Add a group' %>" data-bs-toggle="modal" data-bs-target="#group-modal"></span>
+      % }
     </div>
 
     <div class="card-body">
