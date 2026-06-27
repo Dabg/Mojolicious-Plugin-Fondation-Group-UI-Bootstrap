@@ -1,6 +1,5 @@
 ! app.css
 << https://cdn.datatables.net/2.3.7/css/dataTables.dataTables.min.css
-<< https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css
 
 ! app.js
 << https://code.jquery.com/jquery-3.7.1.min.js

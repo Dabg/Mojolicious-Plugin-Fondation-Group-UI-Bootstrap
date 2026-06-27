@@ -160,7 +160,7 @@ function initialiseTabGroup() {
                     var aff = '<ul>';
                     if (row.perms && row.perms.length > 0) {
                         for (var i = 0; i < row.perms.length; i++) {
-                            aff += '<li>' + row.perms[i].code + '</li>';
+                            aff += '<li>' + row.perms[i].name + '</li>';
                         }
                     }
                     aff += '</ul>';
