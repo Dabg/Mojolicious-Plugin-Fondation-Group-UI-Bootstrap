@@ -171,7 +171,7 @@ function initialiseTabGroup() {
                 "data": null,
                 "render": function (data, type, row) {
                     if (type === 'display') {
-                        return loadBoutonAction([
+                        return renderActions([
                             { 'perm': 'group_update', 'title': l('Edit group'), 'classe': "fa fa-edit intModifie" },
                             { 'perm': 'group_delete', 'title': l('Delete group'), 'classe': "fa fa-trash intSupprime" },
                         ]);
