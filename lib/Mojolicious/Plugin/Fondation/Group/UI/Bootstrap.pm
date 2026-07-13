@@ -3,8 +3,6 @@ use Mojo::Base 'Mojolicious::Plugin', -signatures;
 
 # ABSTRACT: Web UI extension for Fondation::Group — injects group checkboxes into user forms
 
-our $VERSION = '0.01';
-
 sub fondation_meta {
     return {
         dependencies => ['Fondation::Group', 'Fondation::Layout::Bootstrap'],
