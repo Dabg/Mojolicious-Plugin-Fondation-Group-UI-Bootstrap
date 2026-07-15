@@ -1,7 +1,8 @@
 package Mojolicious::Plugin::Fondation::Group::UI::Bootstrap;
-use Mojo::Base 'Mojolicious::Plugin', -signatures;
 
 # ABSTRACT: Web UI extension for Fondation::Group — injects group checkboxes into user forms
+
+use Mojo::Base 'Mojolicious::Plugin', -signatures;
 
 sub fondation_meta {
     return {
