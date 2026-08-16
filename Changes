@@ -1,6 +1,8 @@
 Revision history for Mojolicious-Plugin-Fondation-Group-UI-Bootstrap
 
 {{$NEXT}}
+
+0.02      2026-08-16 19:53:02+02:00 Europe/Paris
     - update dependencies
     - Remove the color from the menu icon
 
